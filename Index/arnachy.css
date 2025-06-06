@@ -1,0 +1,255 @@
+/* General Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: #0a0a0a;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Background Video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 10;
+}
+
+nav .logo {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00ffc8;
+}
+
+/* Hero Section */
+.description {
+  text-align: center;
+  margin-top: 15vh;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.description h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+.description h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.description a {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #00ffc8;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.description a:hover {
+  background-color: #00d1a3;
+  transform: scale(1.05);
+}
+
+/* Benefits Section */
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 60px;
+  background-color: #111;
+}
+
+.benefit {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2);
+}
+
+.benefit-icon {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 30px;
+  background-color: #0d0d0d;
+}
+
+.testimonials h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #00ffc8;
+}
+
+.testimonial .stars i {
+  color: #ffd700;
+  margin: 0 1px;
+}
+
+/* Gallery Section */
+.gallery-container {
+  padding: 60px 30px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.gallery-container h1 {
+  margin-bottom: 40px;
+}
+
+.gallery-item {
+  display: inline-block;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  width: 240px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-image img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.gallery-description {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Footer */
+footer.footer {
+  background-color: #0a0a0a;
+  padding: 40px 30px;
+  color: #aaa;
+}
+
+.footer .footer-col {
+  margin-bottom: 20px;
+}
+
+.footer h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #00ffc8;
+}
+
+.social-links a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #00ffc8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

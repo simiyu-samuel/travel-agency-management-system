@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+  *{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+.invoice{
+    position:absolute;
+    top:70%;
+    left:58%;
+    transform:translate(-50%,-50%);
+    background-color: white;
+    width: 500px;
+    padding: 50px;
+}
+
+
+h4{
+    color: black;
+    text-align: center;
+    margin-top: 45%;
+}
+.icons{
+  display: flex;
+}
+
+
+#input-text{
+    width: 100%;
+    height: 40px;
+    padding:10px 0;
+    margin:5px 0;
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    border-bottom: 1px solid rgb(20, 9, 9);
+    outline:none;
+    background: transparent;
+  }
+  ::placeholder{
+    color: black;
+  }
+  .layer{
+    background: transparent;
+    height: 270px;
+    width: 242px;
+    position: absolute;
+    transition: 0.5s;
+    text-align: center;
+  }
+  .layer:hover{
+    background-color:#D2B48C ;
+    opacity: 50%;
+  }
+  .layer h1{
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 15px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border: solid;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.5s;
+    font-family: 'Akshar', sans-serif;
+}
+.layer:hover h1{
+    bottom: 49%;
+    opacity: 10;
+}
+#button{
+    height: 30px;
+    background-color: #D2B48C;
+    color: black;
+    border: 1px solid;
+    border-radius: 5px;
+}
+#button:hover{
+    background-color: red;
+    color: black;
+}
+#back-button{
+    height: 30px;
+    background-color: #0e9594;
+    color: black;
+    border: 1px solid;
+    border-radius: 5px;
+}
+#back-button:hover{
+    background-color: black;
+    color: #D2B48C;
+}
+.dashboard-info{
+    height: 50px;
+    background: #bc9e7d;
+    display: flex;
+    width: 100%;
+}
+.right{
+    padding-top: 10px;
+    margin-left: 65%;
+}
+.left{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#input-text{
+    width: 30%;
+    height: 40px;
+    padding:10px 0;
+    margin:5px 0;
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    border-bottom: 1px solid rgb(20, 9, 9);
+    outline:none;
+    background: transparent;
+  }
+  ::placeholder{
+    color: gray;
+  }
+  
+  
+  /*------------------------DASHBOARD-------------------*/
+
+body{
+  background: #aec6cf;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 20px;
+  background: white;
+}
+.title{
+  display: flex;
+  align-items: center;
+}
+.title span{
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 2rem 8rem 2rem 2rem;
+}
+.header-icons{
+  display: flex;
+  align-items: center;
+}
+.make-booking{
+  display: flex;
+}
+.make-booking-title{
+  margin-top: 10px;
+  padding-right: 10%;
+}
+.make-booking > div > a > button{
+  background:white;
+  border: solid black 1px;
+}
+.make-booking > div > a > button:hover{
+  background-color: white;
+    color:#d5e5ff ;
+}
+
+.container{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+nav{
+  background: white;
+}
+
+/*-----------------------------------Sidebar---------------------------------------------*/
+.side_navbar{
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  height: 135vh;
+  background: white;
+}
+.side_navbar span{
+  color: gray;
+  margin: 1rem 3rem;
+  font-size: 12px;
+}
+.side_navbar a{
+  width: 100%;
+  padding: 0.8rem 3rem;
+  font-weight: 500;
+  font-size: 15px;
+  color: black;
+  transition: all 0.35s;
+}
+.side_navbar .log-out-button{
+  color: red;
+}
+.side_navbar a:hover{
+  background:  rgb(235, 235, 235);
+}
+.side_navbar .active{
+  background-color: #d5e5ff;
+    color: black;
+}
+#button{
+  background:white;
+  border: solid black 1px;
+}
+#button:hover{
+  background-color: white;
+  color:#d5e5ff ;
+}
+
+/*-------------------------------------------Main Body Section---------------------------------------*/
+.main-body{
+  width: 80%;
+  padding: 1rem;
+  
+}
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid black; 
+  border-radius: 10px; 
+  box-sizing: border-box;
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+
+
+
+input[type=submit] {
+  background:white;
+  border: solid black 1px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background: #d5e5ff;
+  color:black;
+}
+
+
+.top {
+  border-radius: 5px;
+ /* background-color: #f2f2f2;*/
+  padding: 20px;
+}
+.promo_card{
+  width: 100%;
+  color: black;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 0.5rem 1rem 1rem 3rem;
+  background: #23aeba;
+}
+.promo_card h1, .promo_card span, button{
+  margin: 10px;
+}
+.promo_card a{
+  width: 130px;
+  border: 2px solid #2e8b57;
+  background-color: white;
+  text-decoration: none;
+  font-size: 15px;
+  color: #2e8b57 ;
+  display: block;
+  padding: 15px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.35s;
+}
+.promo_card a:hover{
+  border: 2px solid #2e8b57;
+  background-color: #2e8b57;
+  color:  white;
+}
+.promo_card a:active{
+  opacity: 0.7;
+}
+
+
+
+
+

@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.registration-background{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.registration-background .background-image{
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.registration-background .background-image:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg,#4568dc, #b06ab3);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+.registration-background .background-image img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.registration-background .registration-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.registration-background .registration-form .form-content{
+  width: 50%;
+} 
+.registration-background .registration-form .form-content h2{
+  color:  #5a5a5a;
+  font-size: 50px;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #b06ab3;
+  display: inline-block;
+  letter-spacing: 0.5px;
+} 
+.registration-background .registration-form .form-content .input span{
+  font-size: 16px;
+  margin-top: 5px;
+  display: inline-block;
+  color: #5a5a5a;
+  font-weight: 300;
+} 
+.registration-background .registration-form .form-content .input input{
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #5a5a5a;
+  font-size: 16px;
+  background: transparent;
+  border-radius: 30px;
+}
+.registration-background .registration-form .form-content .input button{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #b06ab3;
+  background-color: #b06ab3;
+  font-size: 16px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.35s;
+} 
+.registration-background .registration-form .form-content .input button:hover{
+  color: #b06ab3;
+  background-color: white;
+  border: 1px solid #b06ab3;
+} 
+.registration-background .registration-form .form-content .input button:active{
+  opacity: 0.5;
+} 
+.registration-background .registration-form .form-content .input input:valid{
+  border: 1px solid #b06ab3;
+} 
+.registration-background .registration-form .form-content .remember{
+  margin-top: 15px;
+  color: #5a5a5a;
+} 
+.registration-background .registration-form .form-content .input p{
+  color: #5a5a5a;
+} 
+

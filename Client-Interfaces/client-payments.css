@@ -1,0 +1,169 @@
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: #fcf0d4;
+  height: 100vh;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 20px;
+  background: white;
+}
+.title{
+  display: flex;
+  align-items: center;
+}
+.title span{
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 2rem 8rem 2rem 2rem;
+}
+.header-icons{
+  display: flex;
+  align-items: center;
+}
+.container{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+nav{
+  background: white;
+}
+
+/*-----------------------------------Sidebar---------------------------------------------*/
+.side_navbar{
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.side_navbar span{
+  color: gray;
+  margin: 1rem 3rem;
+  font-size: 12px;
+}
+.side_navbar a{
+  width: 100%;
+  padding: 0.8rem 3rem;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(100, 100, 100);
+  transition: all 0.35s;
+}
+.side_navbar .log-out-button{
+  color: red;
+}
+.side_navbar a:hover{
+  background: rgb(235, 235, 235);
+}
+.side_navbar .active{
+  background-color: #d5e5ff;
+  color: white;
+}
+
+/*-------------------------------------------Main Body Section---------------------------------------*/
+.main-body{
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+.main-body h2{
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+.payment-container{
+  margin-left: 40px;
+  width: 750px;
+  height: 810px;
+  border: 1px solid;
+  background-color: white;
+  padding: 40px;
+  justify-content:space-around;
+}
+
+.payment-container h1{
+  text-align: center;
+}
+
+.first-row{
+   display: flex;
+}
+
+.owner{
+  width: 100%;
+  margin-right: 40px;
+}
+
+.input-field{
+  border: 1px solid #999;
+}
+
+.input-field input{
+  width: 100%;
+  border:none;
+  outline: none;
+  padding: 10px;
+}
+
+.selection{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selection select{
+  background-color: #a9a9a9;
+}
+
+.selection select{
+  padding: 10px 20px;
+}
+
+button{
+  width: 670px;
+  border: none;
+  border: 1px solid #23aeba;
+  background-color: white;
+  color: #23aeba;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  transition: all 0.5s;
+}
+
+button:hover{
+  border: 1px solid #23aeba;
+  background-color: #23aeba;
+  color: white;
+}
+
+button:active{
+  opacity: 0.5;
+}
+
+.cards img{
+  width: 100px;
+}
+
+
+
+
+
+

@@ -1,0 +1,657 @@
+/* Import Poppins if not already linked in HTML <head> */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-dark: #222831;
+  --primary-medium: #393E46;
+  --accent-color: #FF7F11;
+  --accent-color-hover: #E06F0A;
+  --text-light: #EEEEEE;
+  --text-dark: #222831;
+  --background-light: #FFFFFF;
+  --background-section: #F4F4F4;
+  --gallery-primary-dark: #222831;
+  --gallery-accent-color: #FF7F11;
+  --gallery-background-light: #FFFFFF;
+  --gallery-border-color: #DDDDDD;
+  --gallery-shadow-color: rgba(0,0,0,0.07);
+  --gallery-hover-shadow-color: rgba(0,0,0,0.1);
+}
+
+        /* Specific targeting for the gallery to override external styles */
+        /* You might need to make selectors more specific if external styles are strong */
+        body .gallery-container-anarchy { /* Added -anarchy to make it unique */
+            max-width: 1200px !important;
+            margin: 60px auto !important; /* Adjusted margin */
+            background-color: var(--gallery-background-light) !important;
+            padding: 0 15px !important; /* Padding for spacing from edges */
+            overflow: visible !important; /* Changed from auto for box-shadow visibility */
+            font-family: 'Poppins', sans-serif !important; /* Ensure Poppins */
+        }
+
+        body .gallery-container-anarchy h1 {
+            font-family: 'Poppins', sans-serif !important;
+            padding-top: 0 !important;
+            padding-bottom: 40px !important; /* Spacing after title */
+            text-align: center !important;
+            color: var(--gallery-primary-dark) !important;
+            font-size: 32px !important; /* Slightly smaller for this context */
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+
+        body .gallery-grid-anarchy { /* Added -anarchy */
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 20px !important; /* Space between items */
+            justify-content: center !important;
+        }
+
+        body .gallery-item-anarchy { /* Added -anarchy */
+            flex: 1 1 300px !important; /* Grow, shrink, base width */
+            max-width: 360px !important; /* Max width of a card */
+            border: 1px solid var(--gallery-border-color) !important;
+            overflow: hidden !important;
+            border-radius: 8px !important; /* More pronounced rounding */
+            background-color: var(--gallery-background-light) !important;
+            box-shadow: 0 3px 10px var(--gallery-shadow-color) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            display: flex !important; /* For vertical alignment if needed */
+            flex-direction: column !important; /* Stack image and description */
+        }
+
+        body .gallery-item-anarchy:hover {
+            transform: translateY(-6px) !important; /* Slightly more lift */
+            box-shadow: 0 8px 20px var(--gallery-hover-shadow-color) !important;
+        }
+
+        body .gallery-item-anarchy .gallery-image-anarchy { /* Added -anarchy */
+            width: 100% !important;
+            height: 220px !important; /* Adjusted height */
+            overflow: hidden !important; /* Clip image */
+        }
+        body .gallery-item-anarchy .gallery-image-anarchy img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important; /* Ensure image covers the area well */
+            display: block !important; /* Remove any extra space below image */
+            border-top-left-radius: 8px !important; /* Match card rounding */
+            border-top-right-radius: 8px !important; /* Match card rounding */
+        }
+
+        body .gallery-item-anarchy .gallery-description-anarchy { /* Added -anarchy */
+            font-size: 17px !important; /* Adjusted size */
+            font-family: 'Poppins', sans-serif !important;
+            color: var(--gallery-primary-dark) !important;
+            font-weight: 600 !important;
+            background-color: var(--gallery-background-light) !important;
+            padding: 18px 15px !important; /* More padding */
+            text-align: center !important;
+            flex-grow: 1 !important; /* Allow description to fill space if needed */
+            border-bottom-left-radius: 8px !important; /* Match card rounding */
+            border-bottom-right-radius: 8px !important; /* Match card rounding */
+        }
+
+        /* Responsive adjustments specifically for this gallery */
+        @media (max-width: 992px) {
+            body .gallery-item-anarchy {
+                flex-basis: calc(50% - 10px) !important; /* 2 items per row, accounting for 20px gap */
+                max-width: calc(50% - 10px) !important;
+            }
+             body .gallery-container-anarchy h1 {
+                font-size: 28px !important;
+            }
+        }
+
+        @media (max-width: 600px) { /* Changed breakpoint for single column */
+            body .gallery-item-anarchy {
+                flex-basis: 100% !important; /* 1 item per row on small screens */
+                max-width: 380px !important; /* Control max width even in single column */
+                margin-left: auto !important; /* Center if single column */
+                margin-right: auto !important; /* Center if single column */
+            }
+            body .gallery-container-anarchy h1 {
+                font-size: 24px !important;
+            }
+            body .gallery-grid-anarchy {
+                gap: 15px !important;
+            }
+        }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*---------------------------Homepage header styling-------------------------------------------*/
+.header-container{
+  width: 100%;
+  height: 100vh;
+  /* Darker, more dramatic overlay for the video */
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+  position: relative;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure video doesn't cause scrollbars */
+}
+nav{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25px 8%; /* Slightly more padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10; /* Ensure nav is above video */
+}
+nav .logo{ /* If you use an image logo */
+  width: 120px; /* Adjust as needed */
+  filter: brightness(0) invert(1); /* Makes a dark logo white if needed */
+}
+nav .logo-text { /* For the text logo from HTML */
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 45px; /* Slightly more spacing */
+}
+nav ul li a{
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 16px; /* Consistent font size */
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative; /* For underline effect */
+  padding-bottom: 5px;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+nav ul li a:hover{
+  color: var(--accent-color);
+}
+
+/*style description as it is the main section of the homepage giving it a subtle and cool back effect*/
+.description{
+  position: relative;
+  text-align: center;
+  color: var(--text-light);
+  z-index: 5; /* Ensure text is above video */
+  padding: 100px; /* Padding for smaller screens */
+  background: rgba(32, 139, 95, 0.5); /* Semi-transparent background for readability */
+  border-radius: 30px;
+
+}
+.description h1{
+  font-size: 80px; /* Slightly smaller for better responsiveness */
+  color: var(--text-light);
+  font-weight: 700; /* Bolder */
+  line-height: 1.1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* More prominent shadow */
+  margin-bottom: 15px;
+}
+/* Removed -webkit-text-stroke hover for h1 for a cleaner look */
+
+.description h2{
+  font-size: 26px;
+  color: var(--text-light);
+  font-weight: 300; /* Lighter for contrast with h1 */
+  max-width: 700px;
+  margin: 0 auto 30px auto; /* Centering and spacing */
+  line-height: 1.5;
+}
+.description a{
+  text-decoration: none;
+  display: inline-block;
+  color: var(--text-light);
+  background-color: var(--accent-color);
+  font-size: 18px; /* Adjusted size */
+  font-weight: 600;
+  border: 2px solid var(--accent-color);
+  padding: 15px 45px; /* Adjusted padding */
+  border-radius: 5px; /* Sharper edges */
+  margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.description a:hover{
+  background-color: var(--accent-color-hover);
+  border-color: var(--accent-color-hover);
+  color: var(--text-light);
+  transform: translateY(-3px); /* Subtle lift */
+}
+.description a:active{
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+.background-video{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; /* Ensure it covers */
+  min-height: 100%; /* Ensure it covers */
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover; /* Cover the area */
+}
+/* Media queries for video aspect ratio are generally fine,
+   object-fit: cover handles most cases well. */
+
+/*--------------------------------Benefits list styling----------------------------------------*/
+.benefits-list{
+  display: flex; /* Use flexbox for better alignment */
+  justify-content: space-around; /* Distribute space */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  padding: 60px 5%; /* Add padding */
+  background-color: var(--background-section);
+}
+.benefit{
+  /* Removed display: inline-block and margins */
+  flex-basis: 22%; /* Aim for 4 items per row, adjust as needed */
+  min-width: 280px; /* Minimum width before wrapping */
+  text-align: center; /* Center content within benefit */
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.benefit-icon{
+  /* margin-left: 100px;  Removed specific margin */
+  width: 70px; /* Control icon size */
+  height: 70px;
+  margin-bottom: 20px;
+  /* Consider SVG icons for better scalability and color control */
+  /* Example: filter: invert(38%) sepia(98%) saturate(1408%) hue-rotate(359deg) brightness(103%) contrast(103%); to color orange */
+}
+.benefit h3{
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  color: var(--primary-dark);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+.benefit h3:hover{
+  color: var(--accent-color);
+  /* transform: scale(1.15); Keep or remove subtle hover effects */
+}
+.benefit p{
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  color: var(--primary-medium);
+  font-size: 15px;
+  line-height: 1.6;
+}
+/* Removed .benefit-2 and .benefit-4 specific margins, handle with general spacing */
+
+/*--------------------------------Testimonials styling----------------------------------------*/
+.testimonials{
+  font-family: 'Poppins', sans-serif;
+  padding: 80px 5%; /* Increased padding */
+  background: var(--background-light); /* Cleaner background */
+  color: var(--primary-medium);
+  text-align:center;
+}
+.inner h1{ /* Renamed from .inner h1 for clarity */
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 36px; /* Adjusted size */
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.testimonials .inner{ /* Keep .inner if used elsewhere, or scope better */
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden; /* This can sometimes clip shadows, be careful */
+}
+
+.testimonials .border{ /* Scoped to testimonials */
+  width: 100px; /* Shorter border */
+  height: 4px; /* Thicker */
+  background-color: var(--accent-color); /* Use accent color */
+  margin: 0 auto 50px auto; /* Centered, more bottom margin */
+}
+
+.testimonials .row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Add gap between columns */
+}
+.testimonials .col{
+  flex: 1 1 300px; /* Allow flex grow, shrink, with a base of 300px */
+  max-width: 350px; /* Max width for a card */
+  box-sizing: border-box;
+  /* padding: 15px; Handled by gap or individual testimonial padding */
+}
+.testimonial{
+  background: var(--background-section); /* Slightly off-white card */
+  padding: 30px;
+  /* height: 400px;  Let content define height for flexibility */
+  border-radius: 8px; /* Subtle rounding */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 380px; /* Ensure a minimum height for visual consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.testimonial img{
+  width: 80px; /* Slightly smaller */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px auto; /* Centered */
+  border: 3px solid var(--accent-color); /* Accent border */
+}
+.testimonial .name{
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.testimonial p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--primary-medium);
+  flex-grow: 1; /* Allow paragraph to take available space */
+  margin-bottom: 15px;
+}
+.testimonial .stars{
+  color: var(--accent-color); /* Use accent color */
+  margin-bottom: 0; /* Removed bottom margin as p has it */
+  font-size: 16px;
+}
+/*---------------------------------Attractions gallery styling (Adventure Highlights)-------------------------*/
+.gallery-container{
+  max-width: 1200px;
+  margin: 80px auto; /* Add top/bottom margin */
+  background-color: var(--background-light);
+  overflow: auto; /* Changed from hidden to auto for clarity, or use clearfix */
+  padding: 0 15px; /* Padding for spacing from edges */
+}
+.gallery-container h1{
+  font-family: 'Poppins', sans-serif;
+  padding-top: 0; /* Removed as section has margin */
+  padding-bottom: 40px; /* Spacing after title */
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.gallery-grid { /* Added a wrapper for flex/grid layout */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between items */
+    justify-content: center;
+}
+.gallery-item{
+  /* margin: 5px; -- Handled by gap */
+  border: 1px solid #ddd; /* Softer border */
+  /* float: left; -- Removed for flex/grid */
+  /* width: 390px; -- Let flexbox handle width */
+  flex: 1 1 350px; /* Grow, shrink, base width */
+  max-width: 380px;
+  overflow: hidden;
+  border-radius: 5px; /* Slight rounding */
+  background-color: var(--background-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.gallery-item img{
+  width: 100%;
+  height: 250px; /* Adjusted height */
+  object-fit: cover; /* Ensure image covers the area well */
+  /* transition: transform 2s; -- Moved hover effect to .gallery-item for the whole card */
+  display: block; /* Remove any extra space below image */
+}
+.gallery-image{ /* This div might be redundant if img styles are sufficient */
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.gallery-description{
+  font-size: 18px; /* Adjusted size */
+  font-family: 'Poppins', sans-serif;
+  color:  var(--primary-dark);
+  font-weight: 600;
+  background-color: var(--background-light);
+  padding: 20px 15px; /* More padding */
+  text-align: center;
+}
+/* Removed .gallery-item:hover img transform, hover is on .gallery-item now */
+
+.attractions-link{ /* Renamed in HTML to .gallery-explore-link */
+  margin-top: 50px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.attractions-link a{ /* Will style based on .description a for consistency or create new style */
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: var(--accent-color);
+  padding: 15px 45px;
+  border: 2px solid var(--accent-color);
+  color: var(--text-light);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.attractions-link a:hover{
+  background-color: var(--accent-color-hover);
+  border-color: var(--accent-color-hover);
+  transform: translateY(-3px);
+}
+.attractions-link a:active{
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+/*----------------------------------------Footer styling--------------------------------------------*/
+.footer{
+  background-color: var(--primary-dark); /* Dark footer */
+  padding: 70px 5% 30px 5%; /* Adjusted padding */
+  color: var(--text-light);
+}
+.footer .container { /* Ensure container is centered if needed */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer .row { /* From HTML, assuming it's a flex container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between columns */
+}
+.footer-col{
+  /* width: 25%; -- Let flex handle it */
+  flex: 1 1 200px; /* Grow, shrink, base width */
+  padding:0 15px;
+  margin-bottom: 30px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: var(--text-light); /* Light text on dark bg */
+  text-transform: uppercase; /* Consistent with other titles */
+  margin-bottom: 25px; /* More space before links */
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px; /* Space for the underline */
+  letter-spacing: 0.5px;
+}
+.footer-col h4::before{
+  content:'';
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--accent-color) ; /* Accent underline */
+  height:3px ; /* Thicker underline */
+  box-sizing: border-box;
+  width: 50px; /* Fixed width or percentage */
+}
+.footer-col ul{
+  list-style: none; /* Ensure no bullets */
+  padding-left: 0; /* Ensure no default padding */
+}
+.footer-col ul li:not(:last-child){
+margin-bottom: 12px; /* Slightly more space */
+}
+.footer-col ul li a{
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #B0BEC5; /* Lighter grey for links, good contrast on dark bg */
+  text-decoration: none;
+  font-weight:400;
+  display: block;
+  transition:all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: var(--accent-color); /* Accent on hover */
+  padding-left: 8px; /* Indent on hover */
+}
+.footer-col .social-links a{
+  display: inline-flex; /* Use flex for centering icon */
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width:40px;
+  background-color: var(--primary-medium); /* Use medium grey */
+  margin:0 10px 10px 0;
+  text-align: center;
+  /* line-height: 40px; -- Handled by flex align */
+  border-radius: 50%;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  font-size: 16px; /* Ensure icon size is appropriate */
+}
+.footer-col .social-links a:hover{
+  background-color: var(--accent-color); /* Accent on hover */
+  transform: scale(1.1); /* Slight zoom */
+}
+
+/* Responsive adjustments (add more as needed) */
+@media (max-width: 992px) {
+    .description h1 {
+        font-size: 60px;
+    }
+    .description h2 {
+        font-size: 22px;
+    }
+    .benefit {
+        flex-basis: 45%; /* 2 items per row */
+    }
+    .gallery-item {
+        flex-basis: 45%; /* 2 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 20px 5%;
+        flex-direction: column; /* Stack logo and links */
+        align-items: center;
+    }
+    nav .logo-text {
+        margin-bottom: 15px;
+    }
+    nav ul {
+        text-align: center;
+        padding-left: 0;
+    }
+    nav ul li {
+        margin-left: 15px;
+        margin-right: 15px;
+        display: inline-block; /* Keep them inline but centered */
+        margin-bottom: 10px; /* Spacing if they wrap */
+    }
+    .description h1 {
+        font-size: 48px;
+    }
+    .description h2 {
+        font-size: 20px;
+    }
+    .description a {
+        font-size: 16px;
+        padding: 12px 35px;
+    }
+    .benefits-list {
+        padding: 40px 5%;
+    }
+    .benefit {
+        flex-basis: 100%; /* 1 item per row */
+        min-width: unset;
+    }
+    .testimonials .col {
+        flex-basis: 100%; /* 1 item per row */
+        max-width: 100%;
+    }
+    .gallery-item {
+        flex-basis: 100%; /* 1 item per row on small screens */
+    }
+    .footer-col {
+        flex-basis: 45%; /* 2 footer columns on medium screens */
+        text-align: center; /* Center footer column content */
+    }
+    .footer-col h4::before {
+        left: 50%;
+        transform: translateX(-50%); /* Center the underline */
+    }
+    .footer-col .social-links {
+        text-align: center; /* Center social links */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 14px; /* Smaller nav links */
+    }
+    .description h1 {
+        font-size: 36px;
+    }
+    .description h2 {
+        font-size: 18px;
+    }
+    .footer-col {
+        flex-basis: 100%; /* 1 footer column */
+    }
+}
